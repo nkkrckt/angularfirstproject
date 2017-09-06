@@ -1,0 +1,54 @@
+<div class="uk-container uk-container-center ">
+
+  <table class="uk-table uk-table-hover uk-table-striped">
+    <tfoot>
+    <tr class="uk-text-center">
+      <td class="uk-width-1-4 uk-text-middle">Meal image</td>
+      <td class="uk-width-1-4 uk-text-middle">Meal name</td>
+      <td class="uk-width-1-4 uk-text-middle">Meal price</td>
+      <td class="uk-width-1-4 uk-text-middle">Menu dialog</td>
+    </tr>
+    </tfoot>
+    <tbody>
+    <tr class="uk-text-center">
+      <td class="uk-width-1-4 uk-text-middle"><img src="assets/img/margarita.jpg" alt="Pizza Margarita" class="meal-image uk-thumbnail-mini"></td>
+      <td class="uk-width-1-4 uk-text-middle">{{ mealList[0] }}</td>
+      <td class="uk-width-1-4 uk-text-middle">${{mealPrice[0]}}</td>
+      <td class="uk-width-1-4 uk-text-middle">
+        <button class="uk-button uk-button-default" type="button" name="edit" (click)="editMeal(); mealIterator = 0" title="Edit meal name" uk-tooltip><span uk-icon="icon: settings"></span></button>
+        <button class="uk-button uk-button-default" type="button" name="delete" title="Delete this meal" uk-tooltip><span uk-icon="icon: trash"></span></button></td>
+    </tr>
+    <tr class="uk-text-center">
+      <td class="uk-width-1-4 uk-text-middle"><img src="assets/img/lasagna.jpg" alt="Lasagna" class="meal-image uk-thumbnail-mini"></td>
+      <td class="uk-width-1-4 uk-text-middle">{{mealList[1]}}</td>
+      <td class="uk-width-1-4 uk-text-middle">${{mealPrice[1]}}</td>
+      <td class="uk-width-1-4 uk-text-middle">
+        <button class="uk-button uk-button-default" type="button" name="edit" (click)="editMeal(); mealIterator = 1" title="Edit meal name" uk-tooltip><span uk-icon="icon: settings"></span></button>
+        <button class="uk-button uk-button-default" type="button" name="delete" title="Delete this meal" uk-tooltip><span uk-icon="icon: trash"></span></button>
+      </td>
+    </tr>
+    <tr class="uk-text-center">
+      <td class="uk-width-1-4 uk-text-middle"><img src="assets/img/carbonara.jpg" alt="Pasta Carbonara" class="meal-image uk-thumbnail-mini"></td>
+      <td class="uk-width-1-4 uk-text-middle">{{mealList[2]}}</td>
+      <td class="uk-width-1-4 uk-text-middle">${{mealPrice[2]}}</td>
+      <td class="uk-width-1-4 uk-text-middle">
+        <button class="uk-button uk-button-default" type="button" name="edit" (click)="editMeal(); mealIterator = 2" title="Edit meal name" uk-tooltip><span uk-icon="icon: settings"></span></button>
+        <button class="uk-button uk-button-default" type="button" name="delete" title="Delete this meal" uk-tooltip><span uk-icon="icon: trash"></span></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isInEdition" class="overlay-container uk-position-top uk-position-fixed"></div>
+<div *ngIf="isInEdition" class="uk-overlay uk-overlay-primary uk-position-top uk-position-fixed " uk-navbar>
+  <div class="uk-flex uk-flex uk-flex-around uk-width-1-1 ">
+    <div class="">
+        <label>Change meal name</label><br>
+        <input type="text" name="mealList[mealIterator]" [(ngModel)]="mealList[mealIterator]" />
+      </div>
+    <div class="ok-button">
+      <button class="uk-button uk-button-default" type="button" name="edit" (click)="editMeal()" title="Save changes" uk-tooltip><span uk-icon="icon: check"></span></button>
+    </div>
+  </div>
+</div>

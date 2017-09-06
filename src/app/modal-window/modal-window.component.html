@@ -1,0 +1,12 @@
+<div *ngIf="isInEdition" class="overlay-container uk-position-top uk-position-fixed"></div>
+<div *ngIf="isInEdition" class="uk-overlay uk-overlay-primary uk-position-top uk-position-fixed " uk-navbar>
+  <div class="uk-flex uk-flex uk-flex-around uk-width-1-1 ">
+    <div class="">
+      <label>Change meal name</label><br>
+      <input type="text" name="mealList[mealIterator]" [(ngModel)]="mealList[mealIterator]" />
+    </div>
+    <div class="ok-button">
+      <button class="uk-button uk-button-default" type="button" name="edit" (click)="editMeal()" title="Save changes" uk-tooltip><span uk-icon="icon: check"></span></button>
+    </div>
+  </div>
+</div>

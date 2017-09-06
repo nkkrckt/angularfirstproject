@@ -1,0 +1,20 @@
+.uk-overlay {
+  background: #a4bcff;
+}
+
+.overlay-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #777b85;
+  opacity: 0;
+}
+
+.ok-button>button {
+  height: 100%;
+}
+
+tbody>tr:hover{
+  background: #c8d7ff;
+}
+
+
